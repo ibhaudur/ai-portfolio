@@ -3,77 +3,42 @@ import React from "react";
 
 const Education = () => {
   return (
-    <section id="education" className="bg-gray-800 text-white">
-      <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap justify-center">
-          <div className="mb-3 w-full px-2 sm:w-1/2 lg:w-1/3">
-            <div className="rounded-lg border-solid border-2 border-green-500 h-100">
-              <Image
-                className="rounded-lg"
-                src="/images/mgr.jpg"
-                alt="i"
-                width={400}
-                height={400}
-              />
-              <div className="p-2">
-                <h5>Dr.MGR University</h5>
-                <p className="text-xs mb-0">
-                  Master of Computer Applications (MCA)
-                </p>
-                <p className="text-xs font-bold text-green-500">CGPA - 7.9</p>
-                <p className="text-sm">
-                  Dr. M.G.R. Engineering College, founded in 1988, acquired
-                  Deemed University status in 2003 as Dr. M.G.R. Educational and
-                  Research Institute as per the orders of the University. I
-                  completed my Master’s degree (PG MCA course) at this esteemed
-                  institution.
-                </p>
-              </div>
+    <section id="education" className="px-4 pb-8 sm:pb-10">
+      <div className="section-shell">
+        <div className="grid gap-5 lg:grid-cols-3">
+          <div className="panel-card overflow-hidden">
+            <Image className="h-56 w-full object-cover" src="/images/mgr.jpg" alt="Dr.MGR University" width={400} height={240} />
+            <div className="p-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-400">Master&apos;s Degree</p>
+              <h3 className="mt-2 text-xl font-semibold text-white">Dr. M.G.R. University</h3>
+              <p className="mt-2 text-sm text-amber-300">MCA • CGPA 7.9</p>
+              <p className="mt-3 text-sm leading-7 text-slate-300">
+                Built a strong foundation in software engineering, architecture, and applied development while graduating from a prestigious academic institution.
+              </p>
             </div>
           </div>
-          <div className="mb-3 w-full px-2 sm:w-1/2 lg:w-1/3">
-            <div className="h-100 rounded-lg border-2 border-solid border-green-500">
-              <Image
-                className="rounded-lg"
-                src="/images/jam.png"
-                alt="i"
-                width={400}
-                height={400}
-              />
-              <div className="p-2">
-                <h5>Jamal Mohammed College</h5>
-                <p className="text-xs mb-0">
-                  Bachelor of Computer Applications (BCA)
-                </p>
-                <p className="text-xs font-bold text-green-500">CGPA - 7.4</p>
-                <p className="text-sm">
-                  Jamal Mohamed College, an autonomous institution founded in
-                  1951 and affiliated with Bharathidasan University,
-                  Tiruchirappalli, provided me with a strong foundation. I
-                  completed my BCA at this esteemed institute and was awarded my
-                  undergraduate degree.
-                </p>
-              </div>
+
+          <div className="panel-card overflow-hidden">
+            <Image className="h-56 w-full object-cover" src="/images/jam.png" alt="Jamal Mohammed College" width={400} height={240} />
+            <div className="p-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-400">Bachelor&apos;s Degree</p>
+              <h3 className="mt-2 text-xl font-semibold text-white">Jamal Mohammed College</h3>
+              <p className="mt-2 text-sm text-amber-300">BCA • CGPA 7.4</p>
+              <p className="mt-3 text-sm leading-7 text-slate-300">
+                Strengthened my passion for computing through a blend of theory, practical projects, and a deeply rooted curiosity for problem solving.
+              </p>
             </div>
           </div>
-          <div className="mb-3 w-full px-2 sm:w-1/2 lg:w-1/3">
-            <div className="h-100 rounded-lg border-2 border-solid border-green-500">
-              <Image
-                className="rounded-lg"
-                src="/images/vb.jpg"
-                alt="i"
-                width={400}
-                height={400}
-              />
-              <div className="p-2">
-                <h5>VEBBOX Software Solutions</h5>
-                <p className="text-xs">MERN Stack Course</p>
-                <p className="text-sm">
-                  Vebbox was founded in 2016 by Vignesh Venkadesan. This is the
-                  software solutions startup where I completed my MERN Stack
-                  course.
-                </p>
-              </div>
+
+          <div className="panel-card overflow-hidden">
+            <Image className="h-56 w-full object-cover" src="/images/vb.jpg" alt="Vebbox Software Solutions" width={400} height={240} />
+            <div className="p-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-400">Professional Training</p>
+              <h3 className="mt-2 text-xl font-semibold text-white">Vebbox Software Solutions</h3>
+              <p className="mt-2 text-sm text-amber-300">MERN Stack Program</p>
+              <p className="mt-3 text-sm leading-7 text-slate-300">
+                Completed immersive training that sharpened my practical understanding of building modern web applications end to end.
+              </p>
             </div>
           </div>
         </div>

@@ -1,31 +1,63 @@
 import React from "react";
 import { Experience } from "../utils/data";
 
+const stats = [
+  { value: "5+", label: "Years Experience" },
+  { value: "30+", label: "Projects Delivered" },
+  { value: "15+", label: "Tech Stack" },
+];
+
+const highlights = [
+  "React, Next.js, and Tailwind craft for elegant interfaces",
+  "Scalable Node.js and MongoDB APIs with secure architecture",
+  "Cloud-native delivery using Docker, AWS, and modern DevOps habits",
+];
+
 const Aboutus = () => {
   return (
-    <section id="about" className="mx-auto my-5 max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-5xl">
-        <div className="leading-loose text-gray-200">
-          <p>
-            I am <strong>Ibhaudur Rahman</strong>, a <strong>FullStack Developer</strong> with <strong>{Experience()} years</strong> of professional experience.
-            On the front end, I craft fast, accessible interfaces with <strong>React.js, Redux Toolkit, Next.js, Tailwind CSS, Bootstrap, Material UI, Formik</strong>, and core <strong>JavaScript</strong>.
-            On the back end, I build secure, scalable APIs using <strong>Node.js, Express, MongoDB</strong>, and <strong>SQL databases</strong>.
-            My toolkit also includes <strong>Docker, AWS, Git, TypeScript, caching strategies, AES encryption</strong>, and <strong>web-security best practices</strong>, enabling me to deliver polished, containerized, cloud-ready applications end to end.
-          </p>
+    <section id="about" className="px-4 pb-8 sm:pb-10">
+      <div className="section-shell space-y-8">
+        {/* Stats Section */}
+        <div className="grid gap-4 sm:grid-cols-3">
+          {stats.map((stat, idx) => (
+            <div key={idx} className="panel-card overflow-hidden border-emerald-400/20 p-5 text-center sm:p-6">
+              <p className="text-3xl font-bold text-amber-300 sm:text-4xl">{stat.value}</p>
+              <p className="mt-2 text-sm uppercase tracking-[0.2em] text-slate-400">{stat.label}</p>
+            </div>
+          ))}
+        </div>
 
-          <p className="mt-4">
-            I hold a <strong>Master of Computer Applications (MCA) degree</strong> from Dr. M.G.R. Educational and Research Institute, Chennai, which further honed my technical skills and knowledge.
-            During my academic and professional journey, I have worked on various projects, showcasing my ability to develop dynamic and responsive web applications.
-            My education includes a <strong>Bachelor of Computer Applications (BCA)</strong> from Jamal Mohamed College, an autonomous institution affiliated with Bharathidasan University, Tiruchirappalli.
-          </p>
+        {/* Main Content */}
+        <div className="panel-card overflow-hidden p-6 sm:p-8 lg:p-10">
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+            <div className="space-y-4 text-sm leading-8 text-slate-300 sm:text-base">
+              <p>
+                I am <strong className="text-white">Ibhaudur Rahman</strong>, a <strong className="text-white">AI FullStack Developer</strong> with <strong className="text-emerald-400">{Experience()} years</strong> of professional experience. I create fast, accessible, and visually polished experiences that balance strategy, usability, and technical reliability.
+              </p>
+              <p>
+                My work spans the full product lifecycle — from interface design and component systems to API architecture, database design, deployment, and ongoing optimization.
+              </p>
+              <p>
+                I bring a thoughtful approach to every build, backed by strong fundamentals in JavaScript, TypeScript, React, Next.js, Node.js, MongoDB, SQL, Docker, AWS, and modern web security practices.
+              </p>
+            </div>
 
-          <p className="mt-4">
-            Furthermore, I have completed a <strong>FullStack development course</strong> at Vebbox Software Solutions, which has enriched my understanding and skills in building comprehensive web applications.
-          </p>
-
-          <p className="mt-4">
-            Throughout my career, I have consistently demonstrated my capability to work on complex projects, delivering high-quality solutions and contributing effectively to my team&apos;s success.
-          </p>
+            <div className="rounded-[24px] border border-emerald-400/20 bg-slate-950/60 p-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-400">
+                What I bring
+              </p>
+              <div className="mt-4 space-y-3">
+                {highlights.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

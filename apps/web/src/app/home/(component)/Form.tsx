@@ -1,7 +1,7 @@
 "use client";
 import Toast from "@/components/Alert/Toast";
 import InputField from "@/components/Fields/InputField";
-import { useFetchData, usePostData } from "@/hooks/useResponsequery";
+import { usePostData } from "@/hooks/useResponsequery";
 import useSnackbar from "@/hooks/useSnackbar";
 import React, { useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -20,13 +20,8 @@ const MyForm: React.FC = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>();
-  const { data: welcome } = useFetchData({
-    key: "welcome",
-    url: "",
-  });
   const {
     mutate: PostEnquiry,
-    data,
     isSuccess,
     isPending,
     isError,
@@ -39,16 +34,17 @@ const MyForm: React.FC = () => {
   };
   useEffect(() => {
     if (isSuccess) {
-      openSnackBar("Submited Successfully!", "success");
+      openSnackBar("Submitted Successfully!", "success");
     } else if (isError) {
       openSnackBar("Retry!", "error");
     }
-  }, [isSuccess, isError]);
+  }, [isSuccess, isError, openSnackBar]);
+
   return (
     <React.Fragment>
       <BackdropLoader loader={isPending} />
       <Toast open={open} message={message} type={type} />
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
         <InputField
           register={register}
           errors={errors}
@@ -72,10 +68,10 @@ const MyForm: React.FC = () => {
         />
 
         <button
-          className="w-100 border-2 border-green-500 border-solid text-green-500 p-2 rounded"
+          className="w-full rounded-full border border-emerald-400 bg-emerald-500/15 px-4 py-3 text-sm font-semibold text-emerald-300 transition hover:bg-emerald-500/25"
           type="submit"
         >
-          Submit
+          Submit enquiry
         </button>
       </form>
     </React.Fragment>

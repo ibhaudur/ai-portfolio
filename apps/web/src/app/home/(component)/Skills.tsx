@@ -22,25 +22,29 @@ const languages_and_Framework = [
 
 const Skills = () => {
   return (
-    <React.Fragment>
-      <h3 className="my-4 text-center underline">Skills</h3>
-      <div className="flex flex-wrap justify-center">
+     <section id="experience">
+      <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
+    <div className="panel-card p-5 sm:p-6">
+      <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-400">Toolkit</p>
+          <h3 className="text-2xl font-semibold text-white">Core Skills & Technologies</h3>
+        </div>
+        <p className="text-sm text-slate-300">Focused on modern, production-ready stack choices.</p>
+      </div>
+      <div className="flex flex-wrap justify-center gap-3">
         {languages_and_Framework.map((item, index) => (
-          <div key={index} className="mb-3 w-1/2 px-2 sm:w-1/3 md:w-1/4 lg:w-1/5">
+          <div key={index} className="rounded-2xl border border-white/10 bg-slate-950/60 p-4 text-center transition hover:-translate-y-1 hover:border-emerald-400/40">
             <div className="flex justify-center">
-              <Image
-                className="w-24"
-                src={item.image}
-                alt="i"
-                width={200}
-                height={200}
-              />
+              <Image className="h-14 bg-white p-2 rounded w-14" src={item.image} alt={item.name} width={56} height={56} />
             </div>
-            <p className="text-center">{item.name}</p>
+            <p className="mt-3 text-sm font-medium text-slate-200">{item.name}</p>
           </div>
         ))}
       </div>
-    </React.Fragment>
+    </div>
+    </div>
+    </section>
   );
 };
 

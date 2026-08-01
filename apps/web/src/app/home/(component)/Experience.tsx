@@ -6,20 +6,20 @@ import {
   KirshiExperience,
   VebboxExperience,
 } from "@/utils/data";
-import Skills from "./Skills";
 import ExperienceCard from "@/components/home/ExperienceCard";
 
 const Experience = () => {
   return (
     <section id="experience">
       <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center space-y-6">
           <ExperienceCard
             company="Bayer"
             period="Dec, 2025 - Present"
             role="Software Engineer II"
             logo="/images/Logo_Bayer.svg"
             items={BayerExperience}
+            isCurrent
           />
           <ExperienceCard
             company="HCLTech"
@@ -42,10 +42,6 @@ const Experience = () => {
             logo="/images/vebbox.jpeg"
             items={VebboxExperience}
           />
-
-          <div className="mt-4 w-full">
-            <Skills />
-          </div>
         </div>
       </div>
     </section>

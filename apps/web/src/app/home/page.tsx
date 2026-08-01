@@ -5,6 +5,7 @@ import Topic from "@/components/Topic";
 import Education from "./(component)/Education";
 import Experience from "./(component)/Experience";
 import Contact from "./(component)/Contact";
+import Skills from "./(component)/Skills";
 
 const HomePage = () => {
   return (
@@ -28,6 +29,12 @@ const HomePage = () => {
         i="ab"
       />
       <Experience />
+       <Topic
+        Head="Skills"
+        con="Technologies I use to build fast, scalable, and user-focused digital products."
+        i="ab"
+      />
+            <Skills />
       <Topic
         Head="Contact"
         con="For inquiries and support"

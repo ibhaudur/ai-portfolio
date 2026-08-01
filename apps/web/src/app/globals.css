@@ -1,27 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300,400;500;600&display=swap');
 @import "tailwindcss";
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  color-scheme: dark;
 }
 
 body {
+  @apply min-h-screen bg-[#050816] text-slate-100 antialiased;
+  background-image:
+    radial-gradient(circle at top left, rgba(16, 185, 129, 0.16), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.12), transparent 24%);
+
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
+::selection {
+  @apply bg-emerald-400/70 text-slate-950;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
 @layer components {
   .active {
     @apply rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white;
@@ -29,11 +40,29 @@ body {
   .inactive {
     @apply rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white;
   }
+  .section-shell {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .panel-card {
+    @apply rounded-[28px] border border-white/10 bg-slate-900/70 shadow-[0_20px_70px_rgba(0,0,0,0.35)] backdrop-blur-xl;
+  }
+  .section-title {
+    @apply text-center text-3xl font-semibold tracking-[0.2em] text-white sm:text-4xl;
+  }
+  .section-subtitle {
+    @apply mx-auto mt-3 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base;
+  }
+  .accent-line {
+    /* @apply mx-auto mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-emerald-400 via-amber-300 to-emerald-500; */
+    content: "";
+    display: block;
+    margin: 0.5rem auto 0;
+    height: 2px;
+    width: 60px;
+    background: linear-gradient(90deg, transparent, #10B981, #F59E0B, #10B981, transparent);
+  }
 }
-@font-face {
-  font-family: "Montserrat";
-  src: url("../public/font/Montserrat-Medium.ttf");
-}
+
 .banner {
   background: radial-gradient(
     759px at 14% 22.3%,
@@ -41,6 +70,7 @@ body {
     rgb(15, 164, 102) 90%
   );
 }
+
 a {
   text-decoration: none !important;
 }
@@ -70,15 +100,6 @@ a {
 #bf::after {
   margin: 0 0 10px 10px;
 }
-.accordion-button:not(.collapsed) {
-  background-color: #22c55e !important;
-}
-.accordion-button {
-  height: 40px !important;
-}
-.accordion-button:focus {
-  box-shadow: none !important;
-}
 .role::after {
   content: "Software Developer";
   animation: changeRole 8s infinite;
@@ -106,7 +127,7 @@ a {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* Adjust height as needed */
+  height: 100%;
   overflow: hidden;
   line-height: 0;
   z-index: -1;
@@ -120,7 +141,7 @@ a {
 }
 
 .wave {
-  fill: #1f2937; /* Wave color */
+  fill: #0f172a;
 }
 .progress-bar {
   position: fixed;
