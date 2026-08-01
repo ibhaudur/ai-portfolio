@@ -7,8 +7,6 @@ services:
       - ./apps/web/.env.local
     ports:
       - "3000:3000"
-    volumes:
-      - web_node_modules:/app/node_modules
     depends_on:
       api:
         condition: service_started
@@ -106,7 +104,6 @@ services:
 
 volumes:
   postgres_data:
-  web_node_modules:
   api_node_modules:
   ai_venv:
 
