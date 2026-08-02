@@ -17,7 +17,8 @@ const Contact = () => {
               <div>
                 <p className="text-2xl font-bold text-amber-300">IR.</p>
                 <p className="mt-3 text-sm leading-7 text-slate-300">
-                  Crafting scalable, secure, and beautiful digital products. Let&apos;s build something extraordinary together.
+                  Crafting scalable, secure, and beautiful digital products.
+                  Let&apos;s build something extraordinary together.
                 </p>
               </div>
 
@@ -25,11 +26,16 @@ const Contact = () => {
               <div className="space-y-4 rounded-[24px] border border-white/10 bg-slate-950/60 p-4">
                 <div className="flex items-start gap-3">
                   <IoLocationOutline className="mt-1 flex-shrink-0 text-xl text-emerald-400" />
-                  <p className="text-sm text-slate-300">112, Pidari Kovil St, near Kunjamal School, Kudavasal, 612601, Tiruvarur district, Tamil Nadu.</p>
+                  <p className="text-sm text-slate-300">
+                    112, Pidari Kovil St, near Kunjamal School, Kudavasal,
+                    612601, Tiruvarur district, Tamil Nadu.
+                  </p>
                 </div>
                 <div className="flex items-center gap-3">
                   <HiOutlineMail className="flex-shrink-0 text-lg text-emerald-400" />
-                  <p className="text-sm text-slate-300">ibhaudurrahman1999@gmail.com</p>
+                  <p className="text-sm text-slate-300">
+                    ibhaudurrahman1999@gmail.com
+                  </p>
                 </div>
                 <div className="flex items-center gap-3">
                   <RiPhoneLine className="flex-shrink-0 text-lg text-emerald-400" />
@@ -54,15 +60,28 @@ const Contact = () => {
             {/* Right Column - Contact Form */}
             <div className="space-y-4">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-400">Get in touch</p>
-                <h3 className="mt-2 text-2xl font-semibold text-white">Send me a message</h3>
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-400">
+                  Get in touch
+                </p>
+                <h3 className="mt-2 text-2xl font-semibold text-white">
+                  Send me a message
+                </h3>
               </div>
               <p className="text-sm text-slate-300">
-                Have a project in mind or want to collaborate? Drop me a line, and I&apos;ll get back to you as soon as possible.
+                Have a project in mind or want to collaborate? Drop me a line,
+                and I&apos;ll get back to you as soon as possible.
               </p>
               <Form />
             </div>
           </div>
+        </div>
+        <div className="green-separator mt-12 mb-6">
+          <p
+            className="text-center text-muted pt-5"
+            style={{ fontSize: "0.75rem", letterSpacing: "0.1em" }}
+          >
+            &copy; 2024 Ibhaudur Rahman &mdash; All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

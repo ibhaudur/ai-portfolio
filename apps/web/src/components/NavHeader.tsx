@@ -29,7 +29,7 @@ const NavHeader = () => {
         borderBottom: scrolled ? "1px solid rgba(0, 0, 0, 0.1)" : "none",
       }}
     >
-      <div className="max-w-7xl mx-auto lg:px-10 h-18 flex items-center justify-between" style={{ height: "72px" }}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-18 flex items-center justify-between" style={{ height: "72px" }}>
         <a href="#" className="font-serif text-amber-300" style={{ fontSize: "1.5rem", fontWeight: 600, letterSpacing: "0.08em" }}>
        IR
         </a>
