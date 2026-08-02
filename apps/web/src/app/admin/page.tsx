@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import AlertDialog from "@/components/Alert/AlertDialog";
 import Toast from "@/components/Alert/Toast";
 import CustomizedTables from "@/components/CustomizedTables";
@@ -7,6 +7,7 @@ import useDeleteBox from "@/hooks/useDeleteBox";
 import { useDeleteData, useFetchData } from "@/hooks/useResponsequery";
 import useSnackbar from "@/hooks/useSnackbar";
 import BackdropLoader from "@/components/UI/BackdropLoader";
+import {getEnquiryUrl} from "@/service/apiUrls";
 
 const Admin = () => {
   const { open, message, openDelete, deleteId } = useDeleteBox();
@@ -17,8 +18,8 @@ const Admin = () => {
     type,
   } = useSnackbar();
   const { data: enquiryList, refetch } = useFetchData({
-    key: "enquiry",
-    url: "enquiry",
+    key: getEnquiryUrl,
+    url: getEnquiryUrl,
   });
 
   const {
@@ -61,7 +62,7 @@ const Admin = () => {
       <Toast open={openSnack} message={snackMessage} type={type} />
       <p className="mt-5 text-3xl sm:mt-0 md:mt-0">Mail List</p>
       <div className="mt-6">
-        <CustomizedTables List={enquiryList?.enquiry} handleDelete={openDelete} />
+        <CustomizedTables List={enquiryList} handleDelete={openDelete} />
       </div>
     </div>
   );

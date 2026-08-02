@@ -1,8 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: `https://my-portfolio-nextjs-ibhaudurs-projects.vercel.app/api`,
-  // baseURL: `http://localhost:3000/api`,
+  baseURL: `http://localhost:3001/api/v1`,
 });
 api.interceptors.request.use(
   function (config) {

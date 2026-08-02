@@ -6,7 +6,7 @@ export interface AlertTypes {
 }
 
 export interface EnquiryItem {
-  _id: string;
+  id: string;
   name: string;
   email: string;
   description: string;

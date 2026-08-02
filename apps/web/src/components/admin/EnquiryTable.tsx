@@ -1,8 +1,6 @@
 "use client";
-
-import React from "react";
 import moment from "moment";
-import { RiDeleteBin5Line } from "react-icons/ri";
+// import { RiDeleteBin5Line } from "react-icons/ri";
 import type { EnquiryItem } from "@/types/admin";
 
 interface EnquiryTableProps {
@@ -21,27 +19,27 @@ export default function EnquiryTable({ list = [], handleDelete }: EnquiryTablePr
               <th className="px-4 py-3 text-left font-semibold text-gray-700">Email Id</th>
               <th className="px-4 py-3 text-left font-semibold text-gray-700">Date</th>
               <th className="px-4 py-3 text-left font-semibold text-gray-700">Message</th>
-              <th className="px-4 py-3 text-left font-semibold text-gray-700">Action</th>
+              {/* <th className="px-4 py-3 text-left font-semibold text-gray-700">Action</th> */}
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200 bg-white">
             {list.map((row) => (
-              <tr key={row._id} className="odd:bg-white even:bg-gray-50">
+              <tr key={row.id} className="odd:bg-white even:bg-gray-50">
                 <td className="px-4 py-3 text-gray-800">{row.name}</td>
                 <td className="px-4 py-3 text-gray-800">{row.email}</td>
                 <td className="px-4 py-3 text-gray-800">
                   {moment(row.createdAt).format("MMM Do YYYY, h:mm a")}
                 </td>
                 <td className="px-4 py-3 text-gray-800">{row.description}</td>
-                <td className="px-4 py-3">
+                {/* <td className="px-4 py-3">
                   <button
-                    onClick={() => handleDelete("Are you sure you want to Delete?", true, row._id)}
+                    onClick={() => handleDelete("Are you sure you want to Delete?", true, row.id)}
                     className="rounded-md p-2 text-red-600 transition hover:bg-red-50"
                     aria-label="Delete enquiry"
                   >
                     <RiDeleteBin5Line className="text-lg" />
                   </button>
-                </td>
+                </td> */}
               </tr>
             ))}
           </tbody>

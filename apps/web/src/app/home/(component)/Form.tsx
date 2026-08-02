@@ -6,11 +6,12 @@ import useSnackbar from "@/hooks/useSnackbar";
 import React, { useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import BackdropLoader from "@/components/UI/BackdropLoader";
+import { postEnquiryUrl } from "@/service/apiUrls";
 
 interface FormValues {
-  name: String;
-  email: String;
-  description: String;
+  name: string;
+  email: string;
+  description: string;
 }
 
 const MyForm: React.FC = () => {
@@ -26,8 +27,8 @@ const MyForm: React.FC = () => {
     isPending,
     isError,
   } = usePostData({
-    key: "enquiry",
-    url: "enquiry",
+    key: postEnquiryUrl,
+    url: postEnquiryUrl,
   });
   const onSubmit: SubmitHandler<FormValues> = (data: any) => {
     PostEnquiry(data);
