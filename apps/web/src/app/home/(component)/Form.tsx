@@ -3,7 +3,7 @@ import Toast from "@/components/Alert/Toast";
 import InputField from "@/components/Fields/InputField";
 import { usePostData } from "@/hooks/useResponsequery";
 import useSnackbar from "@/hooks/useSnackbar";
-import React, { useEffect } from "react";
+import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import BackdropLoader from "@/components/UI/BackdropLoader";
 import { postEnquiryUrl } from "@/service/apiUrls";
@@ -19,27 +19,26 @@ const MyForm: React.FC = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormValues>();
-  const {
-    mutate: PostEnquiry,
-    isSuccess,
-    isPending,
-    isError,
-  } = usePostData({
+
+  const { mutate: PostEnquiry, isPending } = usePostData({
     key: postEnquiryUrl,
     url: postEnquiryUrl,
   });
+
   const onSubmit: SubmitHandler<FormValues> = (data: any) => {
-    PostEnquiry(data);
+    PostEnquiry(data, {
+      onSuccess: () => {
+        openSnackBar("Submitted Successfully!", "success");
+        reset();
+      },
+      onError: () => {
+        openSnackBar("Retry!", "error");
+      },
+    });
   };
-  useEffect(() => {
-    if (isSuccess) {
-      openSnackBar("Submitted Successfully!", "success");
-    } else if (isError) {
-      openSnackBar("Retry!", "error");
-    }
-  }, [isSuccess, isError, openSnackBar]);
 
   return (
     <React.Fragment>
