@@ -21,7 +21,7 @@ Base = declarative_base()
 def init_db() -> None:
     from app.models.user import User
 
-    Base.metadata.create_all(bind=engine)
+    # Base.metadata.create_all(bind=engine)
 
 
 init_db()

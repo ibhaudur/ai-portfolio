@@ -27,13 +27,14 @@ services:
   api:
     container_name: ai-portfolio-api
     build:
-      context: ./services/api
+      context: .
+      dockerfile: services/api/Dockerfile
     env_file:
-      - ./services/api/.env
+      - .env
     ports:
       - "3001:3001"
-    volumes:
-      - api_node_modules:/app/node_modules
+    # volumes:
+    #   - api_node_modules:/app/node_modules
     depends_on:
       postgres:
         condition: service_healthy
@@ -44,10 +45,12 @@ services:
     develop:
       watch:
         - action: sync
-          path: ./services/api
+          path: .
           target: /app
           ignore:
-            - node_modules/
+            - "**/node_modules"
+            - "**/.next"
+            - "**/.git"
         - action: rebuild
           path: ./services/api/package.json
         - action: rebuild
@@ -104,7 +107,6 @@ services:
 
 volumes:
   postgres_data:
-  api_node_modules:
   ai_venv:
 
 networks:

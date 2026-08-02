@@ -1,23 +1,22 @@
 {
-  "name": "database",
+  "name": "@ai-portfolio/database",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "generate": "prisma generate",
-    "migrate": "prisma migrate dev",
-    "studio": "prisma studio",
-    "seed": "tsx prisma/seed.ts"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "generate": "prisma generate"
+  },
   "dependencies": {
     "@prisma/client": "^6.19.3"
   },
   "devDependencies": {
-    "prisma": "^6.19.3"
+    "@types/node": "^26.1.2",
+    "prisma": "^6.19.3",
+    "typescript": "^5.9.2"
   }
 }
