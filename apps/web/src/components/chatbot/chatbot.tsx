@@ -116,7 +116,7 @@ export default function Chatbot() {
       {isOpen && (
         <div className="fixed bottom-24 right-4 z-50 flex h-[600px] w-[380px] flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl dark:border-gray-800 dark:bg-gray-950 sm:right-6">
           {/* Header */}
-          <div className="flex items-center justify-between bg-black px-5 py-4 text-white">
+          <div className="flex items-center justify-between bg-black px-5 py-4 text-amber-300">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10">
                 <Bot size={22} />
@@ -152,7 +152,7 @@ export default function Chatbot() {
                 }`}
               >
                 {message.role === "assistant" && (
-                  <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-black text-white">
+                  <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-black text-amber-300">
                     <Bot size={16} />
                   </div>
                 )}
@@ -233,7 +233,7 @@ export default function Chatbot() {
               <button
                 type="submit"
                 disabled={!input.trim() || isLoading}
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-black text-white transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-40"
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-black text-amber-300 transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-40"
                 aria-label="Send message"
               >
                 <Send size={17} />
