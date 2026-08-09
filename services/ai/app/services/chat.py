@@ -1,8 +1,11 @@
+from datetime import date
+
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama import ChatOllama
 
 from app.config import settings
 from app.services.vector_store import get_vector_store
+from app.services.experience import get_experience
 
 
 def get_llm():
@@ -20,10 +23,14 @@ PROMPT = ChatPromptTemplate.from_messages(
             """
 You are an AI assistant for Ibhaudur Rahman's portfolio.
 
-Answer questions using ONLY the portfolio context provided below.
+Answer questions using ONLY the portfolio context and
+calculated information provided below.
 
 If the answer is not available in the context, say:
 "I don't have that information in my portfolio."
+
+You may use the calculated information for questions
+involving dates, duration, or professional experience.
 
 Do not invent or assume information.
 
@@ -53,7 +60,10 @@ def chat(question: str) -> str:
             "Ibhaudur Rahman's education degree college university"
         )
 
-    if "work experience" in question_lower or "experience" in question_lower:
+    if (
+        "work experience" in question_lower
+        or "experience" in question_lower
+    ):
         queries.append(
             "Ibhaudur Rahman's work experience companies career"
         )
@@ -95,6 +105,20 @@ def chat(question: str) -> str:
         document.page_content
         for document in unique_documents
     )
+
+    # Add dynamically calculated information
+    experience = get_experience()
+
+    calculated_context = f"""
+## Calculated Information
+
+Current date: {date.today().isoformat()}
+
+Professional experience since August 22, 2021:
+{experience}
+"""
+
+    context = context + "\n\n" + calculated_context
 
     prompt = PROMPT.format_messages(
         context=context,

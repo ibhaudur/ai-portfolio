@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavHeader from "@/components/NavHeader";
 import StoreProviders from "./StoreProviders";
+import Chatbot from "@/components/chatbot/chatbot";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function RootLayout({
           {" "}
           <NavHeader />
           <main className="pt-18 sm:pt-20">{children}</main>
+          <Chatbot />
         </StoreProviders>
       </body>
     </html>

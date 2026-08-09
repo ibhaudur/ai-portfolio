@@ -2,8 +2,8 @@
 
 ## About
 
-Ibhaudur Rahman is a Full Stack Developer with 4+ years of
-professional software development experience.
+Ibhaudur Rahman is a Full Stack Developer who started his
+professional software development career on August 22, 2021.
 
 He specializes in building modern web applications using
 React.js, Next.js, Node.js and TypeScript.
