@@ -44,7 +44,7 @@ const Banner = () => {
               <div className="h-[2px] w-14 bg-amber-400"></div>
 
               <p className="uppercase tracking-[0.3em] text-sm font-semibold text-amber-300">
-                AI Full Stack Developer
+                Full Stack AI Engineer
               </p>
             </div>
 

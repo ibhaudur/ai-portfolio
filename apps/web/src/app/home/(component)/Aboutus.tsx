@@ -4,13 +4,14 @@ import { Experience } from "../utils/data";
 const stats = [
   { value: "5+", label: "Years Experience" },
   { value: "30+", label: "Projects Delivered" },
-  { value: "15+", label: "Tech Stack" },
+  { value: "20+", label: "Technologies" },
 ];
 
 const highlights = [
-  "React, Next.js, and Tailwind craft for elegant interfaces",
-  "Scalable Node.js and MongoDB APIs with secure architecture",
-  "Cloud-native delivery using Docker, AWS, and modern DevOps habits",
+  "Modern React and Next.js applications with scalable, accessible, and polished interfaces",
+  "Scalable Node.js and Python/FastAPI backends with secure APIs, authentication, and robust architecture",
+  "AI-powered applications using LLMs, RAG, LangChain, LangGraph, LangSmith, embeddings, vector databases, and intelligent agents",
+  "Production-ready systems built with Docker, AWS, CI/CD, Nginx, caching, rate limiting, and performance optimization",
 ];
 
 const Aboutus = () => {
@@ -20,9 +21,16 @@ const Aboutus = () => {
         {/* Stats Section */}
         <div className="grid gap-4 sm:grid-cols-3">
           {stats.map((stat, idx) => (
-            <div key={idx} className="panel-card overflow-hidden border-emerald-400/20 p-5 text-center sm:p-6">
-              <p className="text-3xl font-bold text-amber-300 sm:text-4xl">{stat.value}</p>
-              <p className="mt-2 text-sm uppercase tracking-[0.2em] text-slate-400">{stat.label}</p>
+            <div
+              key={idx}
+              className="panel-card overflow-hidden border-emerald-400/20 p-5 text-center sm:p-6"
+            >
+              <p className="text-3xl font-bold text-amber-300 sm:text-4xl">
+                {stat.value}
+              </p>
+              <p className="mt-2 text-sm uppercase tracking-[0.2em] text-slate-400">
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>
@@ -32,13 +40,43 @@ const Aboutus = () => {
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
             <div className="space-y-4 text-sm leading-8 text-slate-300 sm:text-base">
               <p>
-                I am <strong className="text-white">Ibhaudur Rahman</strong>, a <strong className="text-white">AI FullStack Developer</strong> with <strong className="text-emerald-400">{Experience()} years</strong> of professional experience. I create fast, accessible, and visually polished experiences that balance strategy, usability, and technical reliability.
+                I am{" "}
+                <strong className="text-white">Ibhaudur Rahman</strong>, a{" "}
+                <strong className="text-white">Full Stack AI Engineer</strong>{" "}
+                with{" "}
+                <strong className="text-emerald-400">
+                  {Experience()} years
+                </strong>{" "}
+                of professional experience building modern, scalable, and
+                production-ready applications.
               </p>
+
               <p>
-                My work spans the full product lifecycle — from interface design and component systems to API architecture, database design, deployment, and ongoing optimization.
+                I work across the complete product lifecycle — from crafting
+                responsive interfaces with React and Next.js to designing
+                scalable backend systems, APIs, databases, AI-powered
+                solutions, deployment pipelines, and cloud infrastructure.
               </p>
+
               <p>
-                I bring a thoughtful approach to every build, backed by strong fundamentals in JavaScript, TypeScript, React, Next.js, Node.js, MongoDB, SQL, Docker, AWS, and modern web security practices.
+                My expertise spans{" "}
+                <strong className="text-white">
+                  JavaScript, TypeScript, React, Next.js, Node.js, Python,
+                  FastAPI, MongoDB, SQL, Docker, AWS, and AI technologies
+                </strong>
+                , with a strong focus on system design, security, concurrency,
+                rate limiting, performance optimization, and reliable
+                production architecture.
+              </p>
+
+              <p>
+                I build intelligent applications using{" "}
+                <strong className="text-white">
+                  LLMs, RAG, LangChain, LangGraph, LangSmith, embeddings, vector databases, and AI
+                  agents
+                </strong>
+                , combining modern AI capabilities with robust full-stack
+                engineering to solve real-world problems.
               </p>
             </div>
 
@@ -46,6 +84,7 @@ const Aboutus = () => {
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-400">
                 What I bring
               </p>
+
               <div className="mt-4 space-y-3">
                 {highlights.map((item) => (
                   <div
