@@ -15,7 +15,8 @@
     "logs": "docker compose logs -f",
     "build": "docker compose build",
     "ps": "docker compose ps",
-    "clean": "docker compose down -v"
+    "clean": "docker compose down -v",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -29,5 +30,14 @@
     "docker"
   ],
   "author": "Ibhaudur Rahman",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^17.3.0"
+  },
+  "lint-staged": {
+  "apps/web/**/*.{js,jsx,ts,tsx}": [
+    "eslint --config apps/web/eslint.config.mjs --fix"
+  ]
+}
 }
