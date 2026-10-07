@@ -44,7 +44,7 @@ const NavHeader = () => {
             {item.name}
           </a>
         ))}
-        <a href="/ibhaudur_Rahman_CV.pdf" download className="border border-emerald-400 px-4 py-2 text-sm font-medium uppercase tracking-[0.2em] text-emerald-300 transition hover:bg-emerald-500 hover:text-black">
+        <a href="/ibhaudur_Rahman_FullStack_AI.pdf" download className="border border-emerald-400 px-4 py-2 text-sm font-medium uppercase tracking-[0.2em] text-emerald-300 transition hover:bg-emerald-500 hover:text-black">
           Download CV
         </a>
       </nav>
@@ -67,7 +67,7 @@ const NavHeader = () => {
               {item.name}
             </a>
           ))}
-          <a href="/ibhaudur_Rahman_CV.pdf" download className="block mt-4 border border-emerald-400 px-4 py-2 text-sm font-medium uppercase tracking-[0.2em] text-emerald-300 transition hover:bg-emerald-500 hover:text-black">
+          <a href="/ibhaudur_Rahman_FullStack_AI.pdf" download className="block mt-4 border border-emerald-400 px-4 py-2 text-sm font-medium uppercase tracking-[0.2em] text-emerald-300 transition hover:bg-emerald-500 hover:text-black">
             Download CV
           </a>
         </div>
