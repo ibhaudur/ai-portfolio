@@ -81,7 +81,7 @@ const Banner = () => {
               </a>
 
               <a
-                href="/ibhaudur_Rahman_CV.pdf"
+                href="/ibhaudur_Rahman_FullStack_AI.pdf"
                 download
                 className="border border-emerald-400 px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300 transition hover:bg-emerald-500 hover:text-black"
               >
